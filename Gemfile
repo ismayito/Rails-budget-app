@@ -44,7 +44,7 @@ gem 'bootsnap', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-# Add gem devise for authentication of the application 
+# Add gem devise for authentication of the application
 gem 'devise'
 
 group :development, :test do
