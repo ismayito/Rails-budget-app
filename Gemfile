@@ -47,6 +47,9 @@ gem 'bootsnap', require: false
 # Add gem devise for authentication of the application
 gem 'devise'
 
+# Add gem cancancan for authorization to access some resources and perform some actions on the application
+gem 'cancancan'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
