@@ -17,7 +17,6 @@ RSpec.describe 'New category page', type: :system do
     visit new_user_session_path
     fill_in 'email', with: user.email
     fill_in 'password', with: 'password'
-    save_and_open_page
     click_button 'Log in'
     sleep 5
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
