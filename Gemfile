@@ -53,9 +53,23 @@ gem 'cancancan'
 # Add the font awesome gem for using font awesome icons in the project
 gem 'font-awesome-sass', '~> 6.5.1'
 
+# Add the gem for testing the devise functions
+gem 'rails-controller-testing'
+
+# Add gem for webdrivers
+gem 'webdrivers'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
+  gem 'rspec-rails'
+
+  # Capybara, the library that allows us to interact with the browser using Ruby
+  gem 'capybara'
+
+  # The following gems aids with the nuts and bolts
+  # of interacting with the browser.
+  gem 'webdrivers'
 end
 
 group :development do
