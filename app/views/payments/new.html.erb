@@ -1,0 +1,21 @@
+<header class='signup-header'>
+ <%= link_to category_payments_path do %>
+   <i class="fas fa-chevron-left"></i>
+ <% end %>
+   <p class='register-title'>Payment</p>
+   <i class="fas fa-search"></i>
+</header>
+<h1 class='category-item'>Create A new payment</h1>
+<%= form_with(model:@payment,url:category_payments_path, method: :post,local: true,class:'form-group') do |form| %>
+    <div class='form-input'>
+    <%= form.label :category_id, 'Category' %>
+    <%= form.collection_select :category_id, Category.all, :id, :name ,{include_blank: 'select a category' } %><br />
+    <%= form.label:name, "Payment name:", class:"form-label"%>
+    <%= form.text_field:name, placeholder:'Food' %>
+    </div>
+    <div class='form-input'>
+    <%= form.label:amount, 'Amount' ,class:"form-description"%>
+    <%= form.text_field:amount,placeholder:'$4'  %>
+    </div>
+    <%= form.submit 'Submit' ,class:"add-link" %>
+<% end %>

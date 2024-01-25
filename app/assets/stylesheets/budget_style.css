@@ -1,8 +1,86 @@
+:root {
+  --primary-color: #3370b3;
+  --primary-background: #f5f6f8;
+  --text-color: #434b54;
+  --button-bg: #60b524;
+}
+
+body {
+  background-color: var(--primary-background);
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .app-header {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.title-screen {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  font-weight: 800;
+}
+
+.register-container {
+  margin-top: 24px;
+  background-color: #fff;
+  z-index: 3;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+  padding: 16px;
+}
+
+.profile-pic {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--text-color);
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.full-name {
+  border-left: none;
+  border-right: none;
+  padding: 12px 0 12px 12px;
+  width: 98%;
+  margin-bottom: 18px;
+}
+
+.submit-button {
+  text-align: center;
+  width: 99%;
+  background-color: var(--primary-color);
+  padding: 12px;
+  color: #fff;
+}
+
+.login {
+  margin-top: 12px;
+}
+
+.profile-icon {
+  border-radius: 100%;
+  border: 1px solid var(--text-color);
+  padding: 8px;
+  background-color: #babfc5;
+  font-size: 8px;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: end;
+  margin-right: 4px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  color: #fff;
 }
 
 .welcome-intro {
@@ -10,6 +88,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: fixed;
+  width: 98%;
+  bottom: 0;
 }
 
 .welcome-login {
@@ -17,4 +98,165 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 12px 0;
+  background-color: var(--primary-color);
+  width: 98%;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.link-cat,
+a {
+  color: #000;
+}
+
+.add-link,
+a {
+  text-decoration: none;
+}
+
+.welcome-login > a {
+  color: #fff;
+}
+
+.welcome-sign {
+  padding: 12px;
+}
+
+.welcome-sign > a {
+  color: var(--text-color);
+}
+
+.signup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 0 4px;
+  color: #fff;
+}
+
+.register-title {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+a > .fas {
+  color: #fff;
+}
+
+.category-title {
+  text-align: center;
+}
+
+.link-container {
+  padding: 18px 0;
+  background-color: #60b524;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.add-link {
+  display: flex;
+  border: 1px solid #fff;
+  padding: 12px 0;
+  background-color: var(--button-bg);
+  border-radius: 4px;
+  color: #fff;
+  width: 98%;
+  margin: 0 auto;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.category-item {
+  text-align: center;
+}
+
+.form-group {
+  width: 60%;
+  margin: 0 auto;
+  border: 2px solid var(--text-color);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 18px;
+  gap: 12px;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.category-container {
+  height: 100vh;
+  position: relative;
+}
+
+.category-item-home {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: #fff;
+  align-content: center;
+  margin: 12px 14px 0 14px;
+}
+
+.icon-name {
+  display: flex;
+  align-content: center;
+  gap: 12px;
+  align-items: center;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+}
+
+.category-name {
+  color: var(--text-color);
+}
+
+.amount {
+  font-weight: 600;
+}
+
+.payment-totals {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 4px;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0 4px;
+}
+
+.pay-group {
+  background-color: #fff;
+  padding: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-bottom: 12px;
+  color: var(--text-color);
+}
+
+.item-amount {
+  font-weight: 800;
+}
+
+.payment-total {
+  font-weight: 800;
 }

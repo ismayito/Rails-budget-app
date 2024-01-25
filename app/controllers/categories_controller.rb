@@ -1,14 +1,31 @@
 class CategoriesController < ApplicationController
-  before_action :require_login, only: [:index]
-  def index; end
+  # Ensure user is signed in
+  before_action :authenticate_user!
 
-  def new; end
+  def index
+    @categories = Category.all
+  end
 
-  def create; end
+  def new
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new(category_params)
+    @category.user = current_user
+    if @category.save!
+      flash[:success] = 'Category created successfully'
+      redirect_to categories_path
+    else
+      puts '@category.errors.message'
+      flash.now[:error] = 'Created not created, check your Entries'
+      render :new
+    end
+  end
 
   private
 
-  def require_login
-    redirect_to categories_path unless user_signed_in? || request.path == categories_path
+  def category_params
+    params.require(:category).permit(:name, :amount)
   end
 end
