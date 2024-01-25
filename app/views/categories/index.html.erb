@@ -1,0 +1,25 @@
+<header class='signup-header'>
+   <i class="fas fa-bars"></i>
+   <p class='register-title'>Transactions</p>
+   <i class="fas fa-search"></i>
+</header>
+<%= link_to "Sign out", destroy_user_session_path, class: 'nav-link', data: { turbo_method: :delete } %>
+<h2 class ='category-title'>Welcome <%=current_user.name %></h2>
+<div class='category-container'>
+<% @categories.each do |category| %>
+<%= link_to category_payments_url(category), class:'link-cat' do %>   
+<div class='category-item-home'>
+   <div class='icon-name'>
+     <div class='icon'>
+       <img src='<%=category.icon %>' alt="icon-pic"/>
+     </div>
+     <p class='category-name'><%= category.name %></p>
+   </div>
+   <div class='amount'><p>$<%= category.total_payments %></p></div>
+</div>
+<% end %>
+<%end%>
+<div class='link-container'>
+<%= link_to 'Create Category',new_category_path , class:'add-link' %>
+</div>
+</div>
