@@ -36,6 +36,17 @@ RSpec.configure do |config|
   ]
   # This is used to include devise helper test functions
   config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  # This is used to include  helper test functions for controllers
+  config.include Warden::Test::Helpers, type: :controller
+  config.before(:suite) do
+    Warden.test_mode!
+  end
+  config.after(:each) do
+    Warden.test_reset!
+  end
+  # config for factoryBot
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
