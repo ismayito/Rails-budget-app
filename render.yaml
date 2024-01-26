@@ -8,9 +8,11 @@ services:
     name: rails_budget_app_production
     runtime: ruby
     plan: free
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: "bundle install && bundle exec rake assets:precompile"
+    startCommand: "bundle exec rake db:migrate && bundle exec rails s -p $PORT"
+    # buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
-    startCommand: "./bin/rails server"
+    # startCommand: "./bin/rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
