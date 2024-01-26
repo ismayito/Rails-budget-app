@@ -25,6 +25,7 @@ body {
   align-items: center;
   height: 90vh;
   font-weight: 800;
+  font-family: "Nova script", sans-serif;
 }
 
 .register-container {
@@ -219,6 +220,13 @@ a > .fas {
   height: 80px;
   border: 1px solid var(--text-color);
   color: var(--text-color);
+}
+
+.icon-mage {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--text-color);
+  object-fit: fill;
 }
 
 .category-name {
