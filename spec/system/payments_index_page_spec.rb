@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Payment page', type: :system do
-   include Devise::Test::IntegrationHelpers # Use Devise helper instead of Warden
+  include Devise::Test::IntegrationHelpers # Use Devise helper instead of Warden
   let(:user) { User.create(name: 'John', email: 'john@example.com', password: 'password') }
 
   let(:category) do

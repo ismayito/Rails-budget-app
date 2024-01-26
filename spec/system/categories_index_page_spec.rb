@@ -22,8 +22,8 @@ RSpec.describe 'Categories Page', type: :system do
   it 'displays the categories' do
     visit categories_path
 
-    @categories.each_with_index do |category, index|
-        expect(page).to have_content(category.name)
+    @categories.each_with_index do |category, _index|
+      expect(page).to have_content(category.name)
     end
   end
 end
