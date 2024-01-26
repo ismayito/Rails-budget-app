@@ -25,6 +25,7 @@ body {
   align-items: center;
   height: 90vh;
   font-weight: 800;
+  font-family: "Nova script", sans-serif;
 }
 
 .register-container {
