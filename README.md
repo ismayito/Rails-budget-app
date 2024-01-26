@@ -26,7 +26,7 @@
 
 **[Rails-budget-app]** is an app that helps you create transactions of different categories.
 
-[Link_to_video_description]()
+[Link_to_video_description](https://www.loom.com/share/5c4331c8051e4f7a863348d5bc658676?sid=f890adf7-b5bd-4c61-a96d-506fd76979f2)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -65,7 +65,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Link to live demo]()
+[Link to live demo](https://rails-budget-app-tee4.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
