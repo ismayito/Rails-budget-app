@@ -23,8 +23,7 @@ RSpec.describe 'Categories Page', type: :system do
     visit categories_path
 
     @categories.each_with_index do |category, index|
-      #   expect(page).to have_content(category.name)
-      #   expect(page).to have_content(category.icon)
+        expect(page).to have_content(category.name)
     end
   end
 end

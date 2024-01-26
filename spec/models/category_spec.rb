@@ -33,7 +33,5 @@ RSpec.describe Category, type: :model do
 
     # Call the total_payments method
     category.total_payments
-    # Assert that the result matches the expected total
-    # expect(result).to eq(30)
   end
 end
