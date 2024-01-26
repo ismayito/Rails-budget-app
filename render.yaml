@@ -3,7 +3,6 @@ databases:
     databaseName: rails_budget_app_production
     user: rails_budget_app
     plan: free
-
 services:
   - type: web
     name: rails_budget_app_production
@@ -13,11 +12,11 @@ services:
     # preDeployCommand: "./bin/rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "./bin/rails server"
     envVars:
-  - key: DATABASE_URL
-    fromDatabase:
-      name: rails_budget_app_production
-      property: connectionString
-  - key: 26e6bad70fe71957bd7735f13d33fb15
-    sync: false
-  - key: WEB_CONCURRENCY
-    value: 2 # sensible default
+      - key: DATABASE_URL
+        fromDatabase:
+          name: rails_budget_app_production
+          property: connectionString
+      - key: 26e6bad70fe71957bd7735f13d33fb15
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default
