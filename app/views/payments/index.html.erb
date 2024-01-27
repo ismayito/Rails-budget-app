@@ -1,0 +1,22 @@
+<header class='signup-header'>
+ <%= link_to categories_path do %>
+   <i class="fas fa-chevron-left"></i>
+ <% end %>
+   <p class='register-title'>Payment</p>
+   <i class="fas fa-search"></i>
+</header>
+<div class='payment-totals'>
+   <p class='user-name'><%= current_user.name %></p>
+   <p class='payment-total'>Total:$<%=@category.total_payments %></p>
+</div>
+<%@payments.each do |payment| %>
+<div class='payment-item'>
+ <div class='pay-group'>
+     <p class='item-name'><%= payment.name %></p>
+     <p class= 'item-amount'>$<%= payment.amount %></p>
+ </div>    
+</div>
+<% end %>
+<div class='link-container'>
+<%= link_to 'Create Payment',new_category_payment_path , class:'add-link' %>
+</div>
