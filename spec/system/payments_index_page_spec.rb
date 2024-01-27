@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Payment page', type: :system do
+  include Devise::Test::IntegrationHelpers # Use Devise helper instead of Warden
   let(:user) { User.create(name: 'John', email: 'john@example.com', password: 'password') }
 
   let(:category) do
@@ -15,6 +16,8 @@ RSpec.describe 'Payment page', type: :system do
 
   # mock the current user for the tests if you are unable to sign in
   before do
+    # sign the user in the application
+    sign_in user
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
   end
 
@@ -25,11 +28,6 @@ RSpec.describe 'Payment page', type: :system do
     expect(page).to have_content('Payment')
     expect(page).to have_content(user.name)
     expect(page).to have_content("Total:$#{category.total_payments}")
-
-    # user.payments.each do |payment|
-    #   expect(page).to have_content(payment.name)
-    #   expect(page).to have_content("$#{payment.amount}")
-    # end
 
     expect(page).to have_link('Create Payment', href: new_category_payment_path(category.id))
   end
